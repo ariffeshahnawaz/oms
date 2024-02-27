@@ -70,7 +70,7 @@ function runUser() {
       audio: true,
     });
     document.getElementById("user-1").srcObject = localStream;
-    $.post("/get-remote-users", { omeID: username })
+    $.post("https://omes-0d61eacef55c.herokuapp.com/get-remote-users", { omeID: username })
       .done(function (data) {
         console.log(data);
         if (data[0]) {
@@ -197,7 +197,7 @@ function runUser() {
   }
   function fetchNextUser(remoteUser) {
     $.post(
-      "/get-next-user",
+      "https://omes-0d61eacef55c.herokuapp.com/get-next-user",
       { omeID: username, remoteUser: remoteUser },
       function (data) {
         console.log("Next user is: ", data);
